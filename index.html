@@ -107,7 +107,7 @@
                         </a>
                       </span>
                       <span class="link-block">
-                        <a href="https://github.com/MMMU-Benchmark/MMMU"
+                        <a href="https://github.com/ReXTime/ReXTime.git"
                            class="external-link button is-normal is-rounded is-dark">
                           <span class="icon">
                               <i class="fab fa-github"></i>
@@ -142,7 +142,7 @@
   <div class="container is-max-desktop">
         <div class="content has-text-centered">
           <img src="static/images/teaser_v9.jpg" alt="geometric reasoning" width="100%"/>
-          <p>We aim to collect temporal reasoning and moment localization question answering data pair from current moment localization datasets. Compare to non-temporal video question answering data, our temporal QA data requires models equipped with advance causal-temporal reasoning ability. In this example, the answer to the question "Why do we hold up a knife?" is "To sharpen the knife on the plate." These two events "hold up a knife" and "sharpen knife on the plate" occur in the same video segment as shown in green. However, for a temporal QA data, the answer to the question "How can we cut up the tomato effectively?" is "Hold up a plate and sharpen the knife on the plate.", which occur in the different video segment as shown in orange and blue separately. It requires models to understand that holding a knife serves not only to sharpen it on the plate but also to effectively cut a tomato or something else.</p>
+          <p>Our benchmark specializes in evaluating reasoning across time, i.e. video QA when question and answer each belongs to different time spans. ReXTime poses difficulties even for frontier MLLMs, as indicated by the large gap to human-level accuracy.</p>
         </div>
     </div>
   </div>
@@ -155,17 +155,20 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">🔔News</h2>
         <div class="content has-text-justified">
-          <p>
+          <!-- <p>
             <b>🚀[2024-01-31]: We added Human Expert performance on the <a href="#leaderboard">Leaderboard</a>!🌟</b>
           </p>
           <p>
             <b>🔥[2023-12-04]: Our evaluation server for the test set is now available on <a href="https://eval.ai/web/challenges/challenge-page/2179/overview"><b>EvalAI</b></a>. We welcome all submissions and look forward to your participation! 😆</b>
+          </p> -->
+          <p>
+            <b> [2024-06-06]: Submit to NeurIPS 2024 Datasets and Benchmarks Track</b>
           </p>
       </div>      
-        <h2 class="title is-3">Introduction</h2>
+        <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We introduce MMMU: a new benchmark designed to evaluate multimodal models on massive multi-discipline tasks demanding college-level subject knowledge and deliberate reasoning. MMMU includes <b>11.5K</b> meticulously collected multimodal questions from college exams, quizzes, and textbooks, covering six core disciplines: Art & Design, Business, Science, Health & Medicine, Humanities & Social Science, and Tech & Engineering. These questions span <b>30</b> subjects and <b>183</b> subfields, comprising 30 highly heterogeneous image types, such as charts, diagrams, maps, tables, music sheets, and chemical structures. Unlike existing benchmarks, MMMU focuses on advanced perception and reasoning with domain-specific knowledge, challenging models to perform tasks akin to those faced by experts. Our evaluation of 14 open-source LMMs and the proprietary GPT-4V(ision) highlights the substantial challenges posed by MMMU. Even the advanced GPT-4V only achieves a 56% accuracy, indicating significant room for improvement. We believe MMMU will stimulate the community to build next-generation multimodal foundation models towards expert artificial general intelligence.
+            We introduce ReXTime, a benchmark designed to rigorously test AI models' ability to perform temporal reasoning within video events. Specifically, ReXTime focuses on reasoning across time, i.e. human-like understanding when the question and its corresponding answer occur in different video segments. This form of reasoning, requiring advanced understanding of cause-and-effect relationships across video segments, poses significant challenges to even the frontier multimodal large language models. To facilitate this evaluation, we develop an automated pipeline for generating temporal reasoning question-answer pairs, significantly reducing the need for labor-intensive manual annotations. Our benchmark includes 921 carefully vetted validation samples and 2,143 test samples, each manually curated for accuracy and relevance. Evaluation results show that while frontier large language models outperform academic models, they still lag behind human performance by a significant 14.3% accuracy gap. Additionally, our pipeline creates a training dataset of 9,695 machine generated samples without manual effort, which empirical studies suggest can enhance the across-time reasoning via fine-tuning.
           </p>
         </div>
       </div>
@@ -179,7 +182,7 @@
   <div class="hero-body has-text-centered">
   <h1 class="title is-1 mmmu">
     <img src="static/images/mmmu_icon2.png" style="width:1em;vertical-align: middle" alt="Logo"/>
-    <span class="mmmu" style="vertical-align: middle">GT-R Benchmark</span>
+    <span class="mmmu" style="vertical-align: middle">ReXTime Benchmark</span>
   </h1>
   </div>
 </section>
