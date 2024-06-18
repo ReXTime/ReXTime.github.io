@@ -168,7 +168,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We introduce ReXTime, a benchmark designed to rigorously test AI models' ability to perform temporal reasoning within video events. Specifically, ReXTime focuses on reasoning across time, i.e. human-like understanding when the question and its corresponding answer occur in different video segments. This form of reasoning, requiring advanced understanding of cause-and-effect relationships across video segments, poses significant challenges to even the frontier multimodal large language models. To facilitate this evaluation, we develop an automated pipeline for generating temporal reasoning question-answer pairs, significantly reducing the need for labor-intensive manual annotations. Our benchmark includes 921 carefully vetted validation samples and 2,143 test samples, each manually curated for accuracy and relevance. Evaluation results show that while frontier large language models outperform academic models, they still lag behind human performance by a significant 14.3% accuracy gap. Additionally, our pipeline creates a training dataset of 9,695 machine generated samples without manual effort, which empirical studies suggest can enhance the across-time reasoning via fine-tuning.
+            We introduce ReXTime, a benchmark designed to rigorously test AI models' ability to perform temporal reasoning within video events. Specifically, ReXTime focuses on reasoning across time, i.e. human-like understanding when the question and its corresponding answer occur in different video segments. This form of reasoning, requiring advanced understanding of cause-and-effect relationships across video segments, poses significant challenges to even the frontier multimodal large language models. To facilitate this evaluation, we develop an automated pipeline for generating temporal reasoning question-answer pairs, significantly reducing the need for labor-intensive manual annotations. Our benchmark includes 921 carefully vetted validation samples and 2,143 test samples, each manually curated for accuracy and relevance. Evaluation results show that while frontier large language models outperform academic models, they still lag behind human performance by a significant 14.3% accuracy gap. Additionally, our pipeline creates a training dataset of 9,695 machine generated samples without manual effort, which empirical studies suggest can enhance the across-time reasoning via fine-tuning. </p>
           </p>
         </div>
       </div>
@@ -194,10 +194,10 @@
         <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
           <p>
-            Large Language Models (LLMs) and Multimodal Large Language Models (MLLMs) have nearly matched human performance in various language and vision-language tasks. Notably, frontier MLLMs trained on web-scale proprietary datasets show impressive video understanding such as GPT-4o, Gemini-Pro-1.5 and Claude-Core. However, unlike LLMs which excel in text reasoning over long sequences, the cause-effect reasoning in MLLMs, especially in understanding long video events, remains under-explored. In an initial study, we identified a common shortcoming in the most advanced MLLMs -- they struggle with video question answering when the question and answer correspond to different time segments. As shown in Figure 1, the question”How can we cut up the tomato efficiently?'' and the answer “Hold up a plate and sharpen the knife on the plate.'' each refers to separate segments. Surprisingly, a simple question like this can challenge leading MLLMs. Therefore, there is a pressing need for a benchmark to quantitatively assess video temporal reasoning. To address this, we introduce <b>ReXTime</b>, a benchmark to evaluate <b>Re</b>asoning-A<b>cross</b>-<b>Time</b> capabilities for video events.
+            Large Language Models (LLMs) and Multimodal Large Language Models (MLLMs) have nearly matched human performance in various language and vision-language tasks. Notably, frontier MLLMs trained on web-scale proprietary datasets show impressive video understanding such as GPT-4o, Gemini-Pro-1.5 and Claude-Core. However, unlike LLMs which excel in text reasoning over long sequences, the cause-effect reasoning in MLLMs, especially in understanding long video events, remains under-explored. In an initial study, we identified a common shortcoming in the most advanced MLLMs -- they struggle with video question answering when the question and answer correspond to different time segments. As shown in Figure 1, the question”How can we cut up the tomato efficiently?'' and the answer “Hold up a plate and sharpen the knife on the plate.'' each refers to separate segments. Surprisingly, a simple question like this can challenge leading MLLMs. Therefore, there is a pressing need for a benchmark to quantitatively assess video temporal reasoning. To address this, we introduce <b>ReXTime</b>, a benchmark to evaluate <b>Re</b>asoning-A<b>cross</b>-<b>Time</b> capabilities for video events. </p>
           </p>
           <p>
-            To develop ReXTime, we propose an LLM-assisted data generation pipeline that minimizes human effort and cuts costs from $300 to $135 per 1,000 QA pairs. The benchmark includes <b>921</b> validation and <b>2143</b> test samples, each rigorously curated by human annotators. Empirical evidence indicates that even proprietary frontier MLLMs are inadequate for temporal reasoning. For instance, humans can achieve 88.0% accuracy on VQA tasks, whereas the top-performing MLLM, OpenAI's GPT-4o, only reaches 73.7% as shown in Figure 1. A new benchmark such as ReXTime has the potential to significantly propel advancements in this field -- it effectively differentiates between model capabilities, and the state-of-the-art model has not yet saturated human-level accuracy. The additional 9695 unverified samples provide a training dataset that has significantly boosted an academic MLLM's temporal reasoning skills, lowering the entry bar for future research. Furthermore, we confirmed that \ours primarily contains <b>reasoning across time</b> questions, with the lowest question-answer overlap in time (QA-mIoU) compared to other video QA benchmarks.            
+            To develop ReXTime, we propose an LLM-assisted data generation pipeline that minimizes human effort and cuts costs from $300 to $135 per 1,000 QA pairs. The benchmark includes <b>921</b> validation and <b>2143</b> test samples, each rigorously curated by human annotators. Empirical evidence indicates that even proprietary frontier MLLMs are inadequate for temporal reasoning. For instance, humans can achieve 88.0% accuracy on VQA tasks, whereas the top-performing MLLM, OpenAI's GPT-4o, only reaches 73.7% as shown in Figure 1. A new benchmark such as ReXTime has the potential to significantly propel advancements in this field -- it effectively differentiates between model capabilities, and the state-of-the-art model has not yet saturated human-level accuracy. The additional 9695 unverified samples provide a training dataset that has significantly boosted an academic MLLM's temporal reasoning skills, lowering the entry bar for future research. Furthermore, we confirmed that \ours primarily contains <b>reasoning across time</b> questions, with the lowest question-answer overlap in time (QA-mIoU) compared to other video QA benchmarks. </p>
           </p>
         </div>
         <!-- <div class="content has-text-centered">
@@ -211,7 +211,7 @@
         <h2 class="title is-3">Question Types in <b>ReXTime</b></h2>
         <div class="content has-text-justified">
           <p>
-            We present the relationship and examples between the three categories of question we generated. “Having dinner / Watching TV'' does not have strong causality and is classified in <i>sequential</i>, which often results in before / after questions. “Girls falls down'' shows strong causality with “The girl is crying.'' but lacks human intention, is classified in <i>cause-effect</i>. “Chopping tomato / Making a dish'' not only exists strong causal relations but also shows subjective deliberation, which is classified into <i>means-to-an-end</i>.</p>
+            We present the relationship and examples between the three categories of question we generated. “Having dinner / Watching TV'' does not have strong causality and is classified in <i>sequential</i>, which often results in before / after questions. “Girls falls down'' shows strong causality with “The girl is crying.'' but lacks human intention, is classified in <i>cause-effect</i>. “Chopping tomato / Making a dish'' not only exists strong causal relations but also shows subjective deliberation, which is classified into <i>means-to-an-end</i>. </p>
         </p>
         <div class="content has-text-centered">
           <img src="static/images/venn_v8.jpg" alt="algebraic reasoning" class="center">
@@ -228,11 +228,14 @@
         <h2 class="title is-3">Data generation pipeline</h2>
         <div class="content has-text-justified">
           <p>
-            To develop an efficient and effective pipeline, we have addressed two primary challenges: (1) the quality-diversity trade-off in LLM generation, and (2) the high cost of human labor for verification. Initially, prompting an (M)LLM to generate question-answer pairs often results in logically incorrect responses. While few-shot in-context learning enhances logical correctness, it reduces response diversity. We address this by moderating the MLLM with specific event attributes and temporal relations from a structured taxonomy. Additionally, although human verification is necessary to eliminate residual errors, we minimize costs by establishing criteria that allow the MLLM to self-assess the accuracy of its generated QAs. As a bonus feature, we evaluate video moment localization to assess whether an AI model accurately grounds its answers to the correct video segments. Please refer to our paper for more details.
+            To develop an efficient and effective pipeline, we have addressed two primary challenges: (1) the quality-diversity trade-off in LLM generation, and (2) the high cost of human labor for verification. Initially, prompting an (M)LLM to generate question-answer pairs often results in logically incorrect responses. While few-shot in-context learning enhances logical correctness, it reduces response diversity. We address this by moderating the MLLM with specific event attributes and temporal relations from a structured taxonomy. Additionally, although human verification is necessary to eliminate residual errors, we minimize costs by establishing criteria that allow the MLLM to self-assess the accuracy of its generated QAs. As a bonus feature, we evaluate video moment localization to assess whether an AI model accurately grounds its answers to the correct video segments. Please refer to our paper for more details. </p>
         </p>
         <div class="content has-text-centered">
           <img src="static/images/main_v8.jpg" alt="algebraic reasoning" class="center">
-          <p> In stage I, we collect event pairs from two video sources. In stage II, we score and categorize the event pairs into four relation types. In stage III, the (M)LLM generates question-answer pairs by our carefully written few-shot demonstrations. In stage IV, the LLM self-evaluate the generated samples to reduce the human verification cost.</p>
+          <p> In stage I, we collect event pairs from two video sources.
+            In stage II, we score and categorize the event pairs into four relation types.
+            In stage III, the (M)LLM generates question-answer pairs by our carefully written few-shot demonstrations.
+            In stage IV, the LLM self-evaluate the generated samples to reduce the human verification cost. </p>
         </div>
           
           
@@ -291,7 +294,7 @@
 </section>
 
 <!-- Paper poster -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
@@ -301,7 +304,7 @@
         
       </div>
     </div>
-  </section>
+  </section> -->
 <!--End paper poster -->
 
 
