@@ -263,10 +263,10 @@
     <div class="columns is-centered m-6">
       <div class="column is-full has-text-centered content">
         <h2 class="title is-3">Comparisons with Existing Benchmarks</h2>
-        <!-- <div class="content has-text-justified">
+        <div class="content has-text-justified">
           <p>
-            
-        </p> -->
+            We compare ReXTime to the two datasets, NExT-GQA and Ego4D-NLQ on the number of reasoning across time samples, certificate length, and QA-mIoU. The average certificate length in our dataset is considerably longer than in existing tasks. This suggests that effectively addressing our task requires models to have more advanced temporal reasoning abilities. The lower QA-mIoU in ReXTime indicates that an AI model needs to first locate the question event and then scan the rest of the visual events in the video to reason about the correct answer. This is more challenging because the reasoning and moment localization cannot be easily decomposed. For existing tasks, a model mostly needs to localize the question event and then reason within roughly the same span due to the higher QA-IoU.
+        </p>
         <div id="results-carousel" class="carousel results-carousel">
           <div class="box m-5">
             <div class="content has-text-centered">
@@ -277,7 +277,7 @@
           <div class="box m-5">
             <div class="content has-text-centered">
               <img src="static/images/dataset_comp2.png" alt="arithmetic reasoning" width="40%"/>
-              <p> Our comparison focuses on datasets with both question queries and moment localization features. We present a comprehensive report detailing the number of temporal reasoning samples on each split, certificate length (C.L.) and Question-Answer mean Intersection over Union (QA-mIoU) respectively. A higher average certificate length indicates that a model needs to reason across a longer duration in a video. A lower QA-mIoU indicates smaller intersection of question span and answer span, requiring the model to reason across different time segments in a video. From the qualitative measures, ReXTime serves as a better benchmark to evaluate the reasoning across time capability. (<span>&#8224;</span>: Only counts temporal reasoning QA pairs. See supplementary in paper for details.)</p>
+              <p>Our comparison focuses on datasets with both question queries and moment localization features. We present a comprehensive report detailing the number of temporal reasoning samples on each split, certificate length (C.L.) and Question-Answer mean Intersection over Union (QA-mIoU) respectively. (<span>&#8224;</span>: Only counts temporal reasoning QA pairs. See supplementary in paper for details.)</p>
             </div>
           </div>
         </div>
