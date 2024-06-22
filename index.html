@@ -304,7 +304,7 @@
 
           <!-- Private Set Table -->
           <div id="table1" class="content">
-            <p class="private-desc">This table shows the results of human and the private models on 300 mini test set.</p>
+            <p class="private-desc">This table shows the results of human and the proprietary models on 300 mini test set.</p>
             <table class="table is-striped is-hoverable is-fullwidth">
               <thead>
                 <tr>
@@ -528,7 +528,7 @@
 <script>
   function changeButtonText(currentIndex) {
     var button = document.getElementById('toggleButton');
-    const labels = ["Validation Set Leaderboard", "Test Set Leaderboard", "Additional Leaderboard"];
+    const labels = ["Proprietary models Leaderboard (Mini test set)", "Open Source Zero-shot Leaderboard", "Open Source Fine-tuned Leaderboard"];
     button.innerHTML = `<b style='font-size: larger;'>${labels[currentIndex]}</b> (Click to Switch)`;
   }
 
