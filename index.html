@@ -293,9 +293,8 @@
         <div class="content">
           <div class="content has-text-justified">
             <p>
-              We evaluate various models including LLMs and LMMs.
-              In each type, we consider both closed- and open-source models.
-              Our evaluation is conducted under a zero-shot setting and a fine-tuning setting is available.
+              We evaluate various models including open-source and proprietary models on the ReXTime benchmark. We consider two types of tasks: moment localization and video question answering (VQA).
+              Our evaluation is conducted under a zero-shot setting and a fine-tuning setting if available.
             </p>
           </div>
 
@@ -303,9 +302,9 @@
             <button id="toggleButton" class="button is-rounded is-dark" onclick="changeButtonText()">Validation Set Leaderboard</button>
           </div>
 
-          <!-- Validation Set Table -->
+          <!-- Private Set Table -->
           <div id="table1" class="content">
-            <p class="validation-desc">This table shows the results of the validation set leaderboard.</p>
+            <p class="private-desc">This table shows the results of human and the private models on 300 mini test set.</p>
             <table class="table is-striped is-hoverable is-fullwidth">
               <thead>
                 <tr>
@@ -377,7 +376,7 @@
 
           <!-- Test Set Table -->
           <div id="table2" class="content hidden">
-            <p class="test-desc hidden">This table shows the results of the test set leaderboard.</p>
+            <p class="open-zero-shot-desc hidden">This table shows the results of zero-shot performance of open source moment retrieval models and grounding MLLMs.</p>
             <table class="table is-striped is-hoverable is-fullwidth">
               <thead>
                 <tr>
@@ -435,7 +434,7 @@
 
           <!-- Additional Table -->
           <div id="table3" class="content hidden">
-            <p class="additional-desc hidden">This table shows the results of an additional leaderboard.</p>
+            <p class="open-finetune-desc hidden">This table shows the results of fine-tuned performance of open source moment retrieval models and grounding MLLMs.</p>
             <table class="table is-striped is-hoverable is-fullwidth">
               <thead>
                 <tr>
@@ -535,7 +534,7 @@
 
   function toggleTables() {
     var tables = [document.getElementById('table1'), document.getElementById('table2'), document.getElementById('table3')];
-    var descriptions = [document.querySelector('p.validation-desc'), document.querySelector('p.test-desc'), document.querySelector('p.additional-desc')];
+    var descriptions = [document.querySelector('p.private-desc'), document.querySelector('p.open-zero-shot-desc'), document.querySelector('p.open-finetune-desc')];
     var currentIndex = tables.findIndex(table => !table.classList.contains('hidden'));
     tables[currentIndex].classList.add('hidden');
     descriptions[currentIndex].classList.add('hidden');
