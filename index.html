@@ -306,95 +306,71 @@
             </p>
           </div>
 
-          <!-- TODO: Build a table to show the results. -->
-          <button id="toggleButton" onclick="changeButtonText()"><b style='font-size: larger;'>Validation Set Leaderboard</b> (Click to Switch)</button>
-          <div class="table-container">
-            <table id="table1" class="table is-fullwidth">
+          <div class="content has-text-centered">
+            <button id="toggleButton" class="button is-rounded is-dark" onclick="changeButtonText()">Validation Set Leaderboard</button>
+          </div>
+
+          <!-- Validation Set Table -->
+          <div id="table1" class="content">
+            <p class="validation-desc">This table shows the results of the validation set leaderboard.</p>
+            <table class="table is-striped is-hoverable is-fullwidth">
               <thead>
                 <tr>
                   <th>Model</th>
                   <th>Accuracy</th>
-                  <th>Zero-shot</th>
-                  <th>Fine-tuning</th>
+                  <th>Precision</th>
+                  <th>Recall</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Human</td>
-                  <td>88.0%</td>
-                  <td>88.0%</td>
-                  <td>88.0%</td>
+                  <td>Model A</td>
+                  <td>85%</td>
+                  <td>80%</td>
+                  <td>78%</td>
                 </tr>
                 <tr>
-                  <td>OpenAI GPT-4o</td>
-                  <td>73.7%</td>
-                  <td>73.7%</td>
-                  <td>73.7%</td>
+                  <td>Model B</td>
+                  <td>83%</td>
+                  <td>79%</td>
+                  <td>76%</td>
                 </tr>
-                <tr>
-                  <td>Facebook CLIP</td>
-                  <td>71.2%</td>
-                  <td>71.2%</td>
-                  <td>71.2%</td>
-                </tr>
-                <tr>
-                  <td>Google LaMDA</td>
-                  <td>68.9%</td>
-                  <td>68.9%</td>
-                  <td>68.9%</td>
-                </tr>
-                <tr>
-                  <td>Microsoft Turing-NLG</td>
-                  <td>65.3%</td>
-                  <td>65.3%</td>
-                  <td>65.3%</td>
-                </tr>
+                <!-- Add more rows as needed -->
               </tbody>
             </table>
-              <p class="validation-desc"> Overall results of different models on the MMMU validation set. The best-performing model in each category is <b>in-bold</b>, and the second best is <u>underlined</u>. *: results provided by the authors.</p>
-              <table id="table1" class="table is-fullwidth">
-                <thead>
-                  <tr>
-                    <th>Model</th>
-                    <th>Accuracy</th>
-                    <th>Zero-shot</th>
-                    <th>Fine-tuning</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>AI</td>
-                    <td>88.0%</td>
-                    <td>88.0%</td>
-                    <td>88.0%</td>
-                  </tr>
-                  <tr>
-                    <td>OpenAI GPT-4o</td>
-                    <td>73.7%</td>
-                    <td>73.7%</td>
-                    <td>73.7%</td>
-                  </tr>
-                  <tr>
-                    <td>Facebook CLIP</td>
-                    <td>71.2%</td>
-                    <td>71.2%</td>
-                    <td>71.2%</td>
-                  </tr>
-                  <tr>
-                    <td>Google LaMDA</td>
-                    <td>68.9%</td>
-                    <td>68.9%</td>
-                    <td>68.9%</td>
-                  </tr>
-                  <tr>
-                    <td>Microsoft Turing-NLG</td>
-                    <td>65.3%</td>
-                    <td>65.3%</td>
-                    <td>65.3%</td>
-                  </tr>
-                </tbody>
-              </table>
-                <p class="test-desc"> Overall results of different models on the MMMU validation set. The best-performing model in each category is <b>in-bold</b>, and the second best is <u>underlined</u>. *: results provided by the authors.</p>
+          </div>
+
+          <!-- Test Set Table -->
+          <div id="table2" class="content hidden">
+            <p class="test-desc hidden">This table shows the results of the test set leaderboard.</p>
+            <table class="table is-striped is-hoverable is-fullwidth">
+              <thead>
+                <tr>
+                  <th>Model</th>
+                  <th>Accuracy</th>
+                  <th>Precision</th>
+                  <th>Recall</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Model A</td>
+                  <td>87%</td>
+                  <td>82%</td>
+                  <td>80%</td>
+                </tr>
+                <tr>
+                  <td>Model B</td>
+                  <td>84%</td>
+                  <td>81%</td>
+                  <td>79%</td>
+                </tr>
+                <!-- Add more rows as needed -->
+              </tbody>
+            </table>
+          </div>
+
+
         </div>
       </div>
     </div>
@@ -478,6 +454,12 @@
 
   document.getElementById('toggleButton').addEventListener('click', toggleTables);
 </script>
+
+<style>
+  .hidden {
+    display: none;
+  }
+</style>
 
 <!-- Statcounter tracking code -->
   
