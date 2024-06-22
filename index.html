@@ -307,59 +307,94 @@
           </div>
 
           <!-- TODO: Build a table to show the results. -->
-          <div class="content has-text-centered">
-            <button id="toggleButton" class="button is-rounded is-dark" onclick="changeButtonText()">Validation Set Leaderboard</button>
+          <button id="toggleButton" onclick="changeButtonText()"><b style='font-size: larger;'>Validation Set Leaderboard</b> (Click to Switch)</button>
           <div class="table-container">
-            <table id="table1" class="table is-fullwidth is-hoverable">
+            <table id="table1" class="table is-fullwidth">
               <thead>
                 <tr>
                   <th>Model</th>
                   <th>Accuracy</th>
+                  <th>Zero-shot</th>
+                  <th>Fine-tuning</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>Human</td>
                   <td>88.0%</td>
-                </tr>
-                <tr>
-                  <td>OpenAI GPT-4o</td>
-                  <td>73.7%</td>
-                </tr>
-                <tr>
-                  <td>Facebook Gemini-Pro-1.5</td>
-                  <td>71.2%</td>
-                </tr>
-                <tr>
-                  <td>Microsoft Claude-Core</td>
-                  <td>69.8%</td>
-                </tr>
-              </tbody>
-            </table>
-            <table id="table2" class="table is-fullwidth is-hoverable hidden">
-              <thead>
-                <tr>
-                  <th>Model</th>
-                  <th>Accuracy</th>
-                </tr>
-                <tr>
-                  <td>Human</td>
+                  <td>88.0%</td>
                   <td>88.0%</td>
                 </tr>
                 <tr>
                   <td>OpenAI GPT-4o</td>
                   <td>73.7%</td>
+                  <td>73.7%</td>
+                  <td>73.7%</td>
                 </tr>
                 <tr>
-                  <td>Facebook Gemini-Pro-1.5</td>
+                  <td>Facebook CLIP</td>
+                  <td>71.2%</td>
+                  <td>71.2%</td>
                   <td>71.2%</td>
                 </tr>
                 <tr>
-                  <td>Microsoft Claude-Core</td>
-                  <td>69.8%</td>
+                  <td>Google LaMDA</td>
+                  <td>68.9%</td>
+                  <td>68.9%</td>
+                  <td>68.9%</td>
+                </tr>
+                <tr>
+                  <td>Microsoft Turing-NLG</td>
+                  <td>65.3%</td>
+                  <td>65.3%</td>
+                  <td>65.3%</td>
                 </tr>
               </tbody>
             </table>
+              <p class="validation-desc"> Overall results of different models on the MMMU validation set. The best-performing model in each category is <b>in-bold</b>, and the second best is <u>underlined</u>. *: results provided by the authors.</p>
+              <table id="table1" class="table is-fullwidth">
+                <thead>
+                  <tr>
+                    <th>Model</th>
+                    <th>Accuracy</th>
+                    <th>Zero-shot</th>
+                    <th>Fine-tuning</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>AI</td>
+                    <td>88.0%</td>
+                    <td>88.0%</td>
+                    <td>88.0%</td>
+                  </tr>
+                  <tr>
+                    <td>OpenAI GPT-4o</td>
+                    <td>73.7%</td>
+                    <td>73.7%</td>
+                    <td>73.7%</td>
+                  </tr>
+                  <tr>
+                    <td>Facebook CLIP</td>
+                    <td>71.2%</td>
+                    <td>71.2%</td>
+                    <td>71.2%</td>
+                  </tr>
+                  <tr>
+                    <td>Google LaMDA</td>
+                    <td>68.9%</td>
+                    <td>68.9%</td>
+                    <td>68.9%</td>
+                  </tr>
+                  <tr>
+                    <td>Microsoft Turing-NLG</td>
+                    <td>65.3%</td>
+                    <td>65.3%</td>
+                    <td>65.3%</td>
+                  </tr>
+                </tbody>
+              </table>
+                <p class="test-desc"> Overall results of different models on the MMMU validation set. The best-performing model in each category is <b>in-bold</b>, and the second best is <u>underlined</u>. *: results provided by the authors.</p>
         </div>
       </div>
     </div>
