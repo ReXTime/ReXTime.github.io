@@ -369,9 +369,29 @@
                   <td>59.67</td>
                   <td>17.00</td>
                 </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Private Set Table -->
+          <div id="table2" class="content">
+            <p class="open-mini-desc">This table shows the results of open source models on 300 mini test set.</p>
+            <table class="table is-striped is-hoverable is-fullwidth">
+              <thead>
                 <tr>
-                  <td colspan="6"><hr></td>
+                  <th rowspan="2">Models</th>
+                  <th colspan="3">Moment Localization</th>
+                  <th colspan="2">VQA</th>
                 </tr>
+                <tr>
+                  <th>mIoU</th>
+                  <th>R @1 (IoU=0.3)</th>
+                  <th>R @1 (IoU=0.5)</th>
+                  <th>Accuracy(%)</th>
+                  <th>Accuracy(%) @IoU ≥ 0.5</th>
+                </tr>
+              </thead>
+              <tbody>
                 <tr>
                   <td>UniVTG (zero-shot)</td>
                   <td>30.18</td>
@@ -603,13 +623,13 @@
 <script>
   function changeButtonText(currentIndex) {
     var button = document.getElementById('toggleButton');
-    const labels = ["Proprietary models Leaderboard (Mini test set)", "Open Source Zero-shot Leaderboard", "Open Source Fine-tuned Leaderboard"];
+    const labels = ["Proprietary Models Leaderboard (Mini test set)", "Open Source Models Leaderboard (Mini test set)", "Open Source Zero-shot Leaderboard", "Open Source Fine-tuned Leaderboard"];
     button.innerHTML = `<b style='font-size: larger;'>${labels[currentIndex]}</b> (Click to Switch)`;
   }
 
   function toggleTables() {
-    var tables = [document.getElementById('table1'), document.getElementById('table2'), document.getElementById('table3')];
-    var descriptions = [document.querySelector('p.private-desc'), document.querySelector('p.open-zero-shot-desc'), document.querySelector('p.open-finetune-desc')];
+    var tables = [document.getElementById('table1'), document.getElementById('table2'), document.getElementById('table3'), document.getElementById('table4')];
+    var descriptions = [document.querySelector('p.private-desc'), document.querySelector('p.open-mini-desc'), document.querySelector('p.open-zero-shot-desc'), document.querySelector('p.open-finetune-desc')];
     var currentIndex = tables.findIndex(table => !table.classList.contains('hidden'));
     tables[currentIndex].classList.add('hidden');
     descriptions[currentIndex].classList.add('hidden');
