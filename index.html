@@ -621,7 +621,7 @@
   function changeButtonText(currentIndex) {
     var button = document.getElementById('toggleButton');
     const labels = ["Proprietary Models Leaderboard (Mini test set)", "Open Source Models Leaderboard (Mini test set)", "Open Source Zero-shot Leaderboard", "Open Source Fine-tuned Leaderboard"];
-    button.innerHTML = `<b style='font-size: larger;'>${labels[currentIndex]}</b> (Click to Switch)`;
+    button.innerHTML = `<b>${labels[currentIndex]}</b> (Click to Switch)`;
   }
 
   function toggleTables() {
